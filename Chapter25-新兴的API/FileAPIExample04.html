@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileAPIExample04</title>
+    <script src="../EventUtil.js"></script>
+</head>
+<body>
+<input type="file" id="files-list">
+<pre id="output"></pre>
+
+<script>
+    function createObjectURL(blob) {
+        if (window.URL) {
+            return window.URL.createObjectURL(blob);
+        } else if (window.webkitURL) {
+            return window.webkitURL.createObjectURL(blob);
+        } else {
+            return null;
+        }
+    }
+
+    window.onload = function () {
+        var filesList = document.querySelector("#files-list");
+        EventUtil.addHandler(filesList, "change", function (event) {
+            var info = "",
+                output = document.querySelector("#output"),
+                files = EventUtil.getTarget(event).files,
+                reader = new FileReader(),
+                url = createObjectURL(files[0]);
+
+            if (url) {
+                if (/image/.test(files[0].type)) {
+                    output.innerHTML = "<img src =\"" + url + "\">";
+                } else {
+                    output.innerHTML = "Not an image";
+                }
+            } else {
+                output.innerHTML = "Your browser doesn't support object URLs";
+            }
+        });
+    }
+</script>
+</body>
+</html>

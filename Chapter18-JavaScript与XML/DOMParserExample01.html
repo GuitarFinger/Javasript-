@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMParserExample01</title>
+</head>
+<body>
+<script>
+    var parser = new DOMParser(),
+        xmlDom = parser.parseFromString("<root></child></root>", "text/xml");
+
+    console.log(xmlDom.documentElement.tagName);
+    console.log(xmlDom.documentElement.firstChild.tagName);
+
+    var anotherChild = xmlDom.createElement("child");
+    xmlDom.documentElement.appendChild(anotherChild);
+
+    var children = xmlDom.getElementsByTagName("child");
+    console.log(children.length);
+</script>
+</body>
+</html>

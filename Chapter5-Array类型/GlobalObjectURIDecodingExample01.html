@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GlobalObjectURIDecodingExample01</title>
+</head>
+<body>
+<script>
+    var uri = "http://www.wrox.com/illegal value.htm#start";
+    var uri1 = encodeURI(uri);
+    console.log(uri1);
+    var uri2 = encodeURIComponent(uri);
+    console.log(uri2);
+    console.log(decodeURI(uri1));
+    console.log(decodeURI(uri2));
+    console.log(decodeURIComponent(uri1));
+    console.log(decodeURIComponent(uri2));
+</script>
+</body>
+</html>

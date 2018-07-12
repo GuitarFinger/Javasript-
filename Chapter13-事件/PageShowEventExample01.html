@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PageShowEventExample01</title>
+</head>
+<body>
+<a href="http://www.baidu.com">baidu</a>
+<script src="../EventUtil.js"></script>
+<script>
+    // Firefox 和 Opera 有 back-forward cache 这一特性
+    (function () {
+        var showCount = 0;
+
+        EventUtil.addHandler(window, "load", function () {
+            alert("Load fired");
+        });
+
+        EventUtil.addHandler(window, "pageshow", function (event) {
+            showCount++;
+            alert("Show has been fired" + showCount + " times. Persisted? " + event.persistent);
+        });
+
+        EventUtil.addHandler(window, "pagehide", function (event) {
+            alert("Hiding. Persisted? " + event.persistent);
+        });
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DImageDataExample01</title>
+    <style>
+        canvas {
+            /*border: 1px solid red;*/
+        }
+    </style>
+</head>
+<body>
+<img src="1.png" alt="">
+<button id="clickMe">点我切换</button>
+<canvas id="drawing" width="250" height="250"></canvas>
+<script>
+    var drawing = document.querySelector("#drawing"),
+        context = drawing.getContext("2d"),
+        image = document.images[0],
+        red, green, blue, alpha,
+        average, imageData, data;
+
+    context.drawImage(image, 0, 0);
+
+    imageData = context.getImageData(0, 0, image.width, image.height);
+    data1 = imageData.data;
+    data = imageData.data;
+    for (let i = 0, len = data.length;i < len; i+=4) {
+        red = data[i];
+        green = data[i+1];
+        blue = data[i+2];
+        alpha = data[i+3];
+
+        // 求平均值
+        average = Math.floor((red + green + blue) / 3);
+
+        // 设置颜色值 透明度不变
+        data[i] = average;
+        data[i+1] = average;
+        data[i+2] = average;
+    }
+//
+    imageData.data = data;
+    context.putImageData(imageData, 0, 0);
+
+</script>
+</body>
+</html>

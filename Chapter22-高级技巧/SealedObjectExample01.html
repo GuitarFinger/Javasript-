@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SealedObjectExample01</title>
+</head>
+<body>
+<script>
+    'use strict';
+    var person = {name:"Nicholas"};
+    Object.seal(person);
+
+    person.age = 29;
+    console.log(person.age);
+    delete person.name;
+    console.log(person.name);
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StringTypeLocaleCompareExample02</title>
+</head>
+<body>
+<script>
+    /**
+     *
+     * @param {string} stringValue 原始值
+     * @param {string} value 比较值
+     */
+    function determineOrder(stringValue, value) {
+        var result = stringValue.localeCompare(value);
+        if (result < 0) {
+            console.log("The string '" + stringValue + "' comes before the string '" + value + "'");
+        } else if (result > 0) {
+            console.log("The string '" + stringValue + "' comes after the string '" + value + "'");
+        } else {
+            console.log("The string '" + stringValue + "' is equal to the string '" + value + "'");
+        }
+    }
+
+    determineOrder("yellow", "brick");
+    determineOrder("yellow", "yellow");
+    determineOrder("yellow", "zoo");
+</script>
+</body>
+</html>

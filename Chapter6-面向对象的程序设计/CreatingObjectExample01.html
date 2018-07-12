@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CreatingObjectExample01</title>
+</head>
+<body>
+<script>
+    var person = new Object();
+    person.name = "pig";
+    person.age = 18;
+    person.job = "tourist";
+
+    person.sayName = function () {
+        console.log(this.name);
+    }
+    person.sayName();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleSheetsExample</title>
+    <link rel="stylesheet" href="StyleSheetsExample.css">
+</head>
+<body>
+<script>
+    var sheet =  null;
+    console.log(document.styleSheets.length);
+    for (var i = 0, len = document.styleSheets.length; i < len; i++) {
+        sheet = document.styleSheets[i];
+        console.log(sheet.href);
+    }
+</script>
+</body>
+</html>

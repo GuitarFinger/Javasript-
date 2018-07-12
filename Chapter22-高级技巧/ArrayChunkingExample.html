@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArrayChunkingExample</title>
+</head>
+<body>
+<div id="myDiv" style="background: red;"></div>
+<script>
+    var data = [12,123,1234,453,436,23,23,5,4123,45,346,5634,2234,345,342];
+
+    function chunk(array, process, context) {
+        setTimeout(function () {
+            console.log(data)
+            console.log(array);
+            var item = array.shift();
+            process.call(context, item);
+
+            if (array.length > 0) {
+                setTimeout(arguments.callee, 500);
+            }
+        }, 500);
+    }
+
+    function printValue(item) {
+        var myDiv = document.querySelector("#myDiv");
+        myDiv.innerHTML += item + "<br>";
+    }
+
+    chunk(data.concat(), printValue);
+
+</script>
+</body>
+</html>

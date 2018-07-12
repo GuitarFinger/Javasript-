@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrossBrowserEventObjectExample01</title>
+</head>
+<body>
+<a class="myLink" href="http://www.baidu.com">click me to somewhere</a>
+<script src="EventUtil.js"></script>
+<script>
+    var link = document.querySelector(".myLink");
+    link.onclick = function (event) {
+        var _event = EventUtil.getEvent(event);
+        EventUtil.preventDefault(_event);
+    }
+
+</script>
+</body>
+</html>

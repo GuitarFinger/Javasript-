@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrossBrowserEventObjectExample01</title>
+</head>
+<body>
+<button class="myBtn">click me</button>
+<script src="EventUtil.js"></script>
+<script>
+    var btn = document.querySelector(".myBtn");
+    btn.onclick = function (event) {
+        alert("Btn has Clicked");
+        event = EventUtil.getEvent(event);
+        EventUtil.stopPropagation(event);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMStyleObjectExample</title>
+</head>
+<body>
+<div id="myDiv" style="width:100px;height: 100px; background-color: red;"></div>
+<script>
+    var myDiv = document.querySelector("#myDiv");
+    console.log(myDiv);
+    let prop, value, i, len;
+    console.log(myDiv.style.length);
+    for (i = 0, len = myDiv.style.length; i < len; i++) {
+        prop = myDiv.style.item(i);
+        value = myDiv.style.getPropertyValue(prop);
+        console.log(prop + " : " + value+ " (" + value.cssValueType + ")");
+    }
+</script>
+</body>
+</html>

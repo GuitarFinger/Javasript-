@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>辅助方法</title>
+</head>
+<body>
+<script>
+    var div1 = document.createElement("div");
+    div1.setAttribute("class", "box");
+    var div2 = document.createElement("div");
+    div2.setAttribute("class", "box");
+
+    console.log(div1.isSameNode(div1));
+    console.log(div1.isEqualNode(div2));
+    console.log(div1.isSameNode(div2));
+    document.body.setUserData("name", "Nicholas", function () {})
+</script>
+</body>
+</html>

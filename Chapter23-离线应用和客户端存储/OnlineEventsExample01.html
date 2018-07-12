@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+net status:
+<div id="status"><script>document.write(navigator.onLine?"online":"offline")</script></div>
+<script src="../EventUtil.js"></script>
+<script>
+
+    EventUtil.addHandler(window, "online", function () {
+        var status = document.querySelector("#status");
+        status.innerHTML = "online";
+    });
+
+    EventUtil.addHandler(window, "offline", function () {
+        var status = document.querySelector("#status");
+        status.innerHTML = "offline";
+    });
+    console.log(1 - 0.8);
+</script>
+</body>
+</html>

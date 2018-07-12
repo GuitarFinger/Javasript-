@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DFillRectGradientExample01</title>
+</head>
+<body>
+<canvas id="drawing" width="500" height="500"></canvas>
+<script>
+    var drawing = document.querySelector("#drawing"),
+        context = drawing.getContext("2d");
+
+    // 定义渐变
+    var gradient = context.createLinearGradient(80, 80, 180, 180);
+    gradient.addColorStop(0, "white");
+    gradient.addColorStop(1, "black");
+
+    // 绘制红色矩形
+    context.fillStyle = "red";
+    context.fillRect(40, 40, 100, 100);
+
+    // 绘制黑色矩形
+    context.fillStyle = gradient;
+    context.fillRect(80, 80, 100, 100);
+</script>
+</body>
+</html>

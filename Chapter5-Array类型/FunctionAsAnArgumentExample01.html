@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FunctionAsAnArgumentExample01</title>
+</head>
+<body>
+<script>
+    function callSomeFunciton(someFunction, someArgument) {
+        return someFunction(someArgument);
+    }
+    function add(num) {
+        return num + 10;
+    }
+    var result1 = callSomeFunciton(add, 10);
+    console.log(result1);
+    function getGreeting(name) {
+        return "Hello, " + name;
+    }
+    var result2 = callSomeFunciton(getGreeting, "jack");
+    console.log(result2);
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileAPIExample03</title>
+    <script src="../EventUtil.js"></script>
+</head>
+<body>
+<input type="file" id="files-list">
+<pre id="output"></pre>
+<div id="progress"></div>
+<script>
+    /**
+     * 截取blob数据 并返回处理后的数据
+     * @param {Data} blob 需要处理的原始数据
+     * @param {Number} startByte 截取开始的位置
+     * @param {Number} length 截取的长度
+     * @returns {*} 处理后的blob数据
+     */
+    function blobSlice(blob, startByte, length) {
+        if (blob.slice) {
+            return blob.slice(startByte, length);
+        } else if (blob.webkitSlice) {
+            return blob.slice(startByte, length);
+        } else if (blob.mozSlice) {
+            return blob.mozSlice(startByte, length);
+        } else {
+            return null;
+        }
+    }
+
+    window.onload = function () {
+        var filesList = document.querySelector("#files-list");
+        EventUtil.addHandler(filesList, "change", function () {
+            var info = "",
+                output = document.querySelector("#output"),
+                files = EventUtil.getTarget(event).files,
+                progress = document.querySelector("#progress"),
+                reader = new FileReader(),
+                blob = blobSlice(files[0], 0, 32);
+
+            if (blob) {
+                reader.readAsText(blob);
+
+                reader.onerror =  function () {
+                    output.innerHTML = "Could not read file, error code is " + reader.error.code;
+                };
+
+                reader.onprogress = function (event) {
+                    if (event.lengthComputable) {
+                        progress.innerHTML = event.loaded + "/" + event.total;
+                    }
+                };
+
+                reader.onload = function () {
+                    output.innerHTML = reader.result;
+                };
+            } else {
+                 alert("Your browser doesn't support slice()");
+            }
+        });
+    };
+
+</script>
+</body>
+</html>

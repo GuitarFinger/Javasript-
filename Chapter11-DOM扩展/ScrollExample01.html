@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScrollExample01</title>
+</head>
+<body>
+<div>Hello world!</div>
+<input class="byLines" type="button" value="scrollBylines(5)">
+<script>
+    var byLines = document.querySelector(".byLines");
+    byLines.addEventListener("click", function () {
+        document.body.scrollByLines(5);
+    });
+</script>
+</body>
+</html>

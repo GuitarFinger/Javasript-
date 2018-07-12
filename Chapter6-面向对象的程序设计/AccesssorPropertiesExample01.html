@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AccesssorPropertiesExample01</title>
+</head>
+<body>
+<script>
+    var book = {
+        _year: 2004,
+        edition: 1
+    };
+    Object.defineProperty(book, "year", {
+        get: function () {
+            return this._year;
+        },
+        set: function (newValue) {
+            console.log(newValue);
+
+            if (newValue > 2004) {
+                this._year = newValue;
+                this.edition += newValue - 2004;
+            }
+        }
+    });
+    book.year = 2005;
+    console.log(book.edition);
+    var a = {
+        _year: 2007,
+        edition: 2
+    }
+    a.year = 2008
+    console.log(a.edition);
+</script>
+</body>
+</html>

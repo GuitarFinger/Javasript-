@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeviceOrientationEventExample01</title>
+</head>
+<body>
+<div id="output"></div>
+<script src="../EventUtil.js"></script>
+<script>
+    EventUtil.addHandler(window, "deviceorientation", function () {
+        var output = document.querySelector("#output");
+        output.innerHTML = "Alpha=" + event.alpha + ", Beta= " + event.beta + ", Gamma= " + event.gamma + "<br>";
+    });
+</script>
+</body>
+</html>

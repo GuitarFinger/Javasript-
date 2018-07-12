@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoadEventExample04</title>
+</head>
+<body>
+<img src="smile.gif" alt="">
+<script src="EventUtil.js"></script>
+<script>
+    var image = document.querySelector("img");
+    EventUtil.addHandler(image, "load", function (event) {
+        event = EventUtil.getEvent(event);
+        console.log(EventUtil.getTarget(event).src);
+    });
+    console.log(image);
+</script>
+</body>
+</html>

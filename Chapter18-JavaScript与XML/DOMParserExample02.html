@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMParserExample02</title>
+</head>
+<body>
+<script>
+    var parser = new DOMParser(),
+        xmlDom,
+        errors;
+
+    try {
+        xmlDom = parser.parseFromString("<root>", "text/xml");
+        errors = xmlDom.getElementsByTagName("parsererror");
+        if (errors.length > 0) {
+            throw new Error("XML  Parsing Error:" + (new XMLSerializer()).serializeToString(xmlDom));
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+</script>
+</body>
+</html>

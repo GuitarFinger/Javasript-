@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PrototypePatternExample01</title>
+</head>
+<body>
+<script>
+    String.prototype.startsWith = function (text) {
+        return this.indexOf(text) == 0;
+    };
+    var msg = "Hello World";
+    console.log(msg.startsWith("Hello"));
+    console.log(String.prototype.sort)
+</script>
+</body>
+</html>

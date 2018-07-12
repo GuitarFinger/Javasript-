@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMEventObjectExample05</title>
+</head>
+<body>
+<button class="myBtn">click me!</button>
+<script>
+    var btn = document.querySelector(".myBtn");
+    btn.onclick = function (event) {
+        alert(event.eventPhase);
+    };
+    document.body.addEventListener("click", function (event) {
+        alert(event.eventPhase);
+    }, true);
+    document.body.onclick = function (event) {
+        alert(event.eventPhase);
+    };
+</script>
+</body>
+</html>

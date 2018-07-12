@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClassListExample01</title>
+    <style>
+        .base {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .red {
+            background-color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="base red"></div>
+<button class="button">click me</button>
+<script>
+    var button = document.querySelector(".button");
+    var div = document.querySelector("div");
+    console.log(div);
+    button.addEventListener("click", function () {
+//       div.classList.remove("red");
+//       div.classList.add("red");
+//       console.log(div.classList.contains("base"));
+        div.classList.toggle("hidden");
+    });
+    console.log(button);
+</script>
+</body>
+</html>

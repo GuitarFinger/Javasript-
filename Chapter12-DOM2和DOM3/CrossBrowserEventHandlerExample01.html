@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CrossBrowserEventHandlerExample01</title>
+</head>
+<body>
+<button id="myBtn">click me!</button>
+<script src="EventUtil.js"></script>
+<script>
+    var btn = document.querySelector("#myBtn");
+    var handler = function (e) {
+        console.log(e);
+        console.log("Hello world");
+    };
+    EventUtil.addHandler(btn, "mousedown", handler);
+    EventUtil.removeHandler(btn, "mouseup", handler);
+</script>
+</body>
+</html>

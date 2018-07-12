@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Proxy</title>
+</head>
+<body>
+<script>
+//    var Stack = (function () {
+//        var stack = [],
+//            allowed = ["push", "pop", "length"];
+//
+//        return Proxy.create({
+//            get: function (receiver, name) {
+//                if (allowed.index(name) > -1) {
+//                    if (typeof stack[name] > -1) {
+//                        return stack[name].bind(stack);
+//                    } else {
+//                        return stack[name];
+//                    }
+//                } else {
+//                    return undefined;
+//                }
+//            }
+//        });
+//    });
+//
+//    var myStack = new Stack();
+//    myStack.push("hi");
+//    myStack.push("goodbye");
+//    console.log(myStack.length);
+//    console.log(myStack[0]);
+//    console.log(myStack.pop());
+    import { eat, hello } from "./MyModule.js";
+    console.log(eat);
+</script>
+</body>
+</html>

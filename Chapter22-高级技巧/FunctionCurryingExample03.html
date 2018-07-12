@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FunctionCurryingExample03</title>
+</head>
+<body>
+<input type="button" id="my-btn" value="click me">
+<script src="../EventUtil.js"></script>
+<script>
+    var handler = {
+        message: "Event Handled",
+
+        handleClick: function (name, event) {
+            console.log(this.message + ":" + name +":" + event.type);
+        }
+    }
+
+    var btn = document.querySelector("#my-btn");
+    EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn"));
+
+</script>
+</body>
+</html>

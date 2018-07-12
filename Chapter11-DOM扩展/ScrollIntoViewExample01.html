@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ScrollIntoViewExample01</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            background: black;
+        }
+        p {
+            height: 1000px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="myDiv">
+
+</div>
+<p></p>
+<script>
+    var myDiv = document.querySelector("#myDiv");
+    myDiv.scrollIntoView(false);
+</script>
+</body>
+</html>

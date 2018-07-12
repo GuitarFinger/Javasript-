@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AttrExample01</title>
+</head>
+<body>
+<div></div>
+<script>
+    var element = document.getElementsByTagName("div")[0];
+    var attr =  document.createAttribute("align");
+    attr.value = "left";
+    element.setAttributeNode(attr);
+    console.log(element.attributes["align"].value);
+    console.log(element.getAttributeNode("align"));
+    console.log(element.getAttribute("align"));
+
+</script>
+</body>
+</html>

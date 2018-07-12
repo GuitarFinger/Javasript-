@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataPropertiesExample01</title>
+</head>
+<body>
+<script>
+    var person = {};
+    Object.defineProperty(person, "name", {
+        writable: false,
+        value: "what?"
+    });
+    console.log(person.name);
+    person.name = "fuck";
+    console.log(person.name);
+</script>
+</body>
+</html>

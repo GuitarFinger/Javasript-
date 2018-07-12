@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DStrokeRectExample01</title>
+    <style>
+        canvas {
+            border: 1px solid burlywood;
+        }
+    </style>
+</head>
+<body>
+<canvas id="drawing" width="400" height="400px">你的浏览器或电脑不支持canvas，请换电脑或浏览器打开</canvas>
+<script>
+    var drawing = document.querySelector("#drawing");
+    if (drawing.getContext) {
+        var context = drawing.getContext("2d");
+
+
+        context.strokeStyle = "#ff0000";
+        context.strokeRect(50, 50, 100, 100);
+
+        context.strokeStyle = "#000";
+        context.lineJoin = "round";
+        context.lineWidth = 10
+        context.strokeRect(70, 70, 100, 100);
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WindowPositionExample01</title>
+</head>
+<body>
+<script>
+    var leftPos = (typeof window.screenLeft == "number") ? window.screenLeft : window.screenX;
+    var topPos = (typeof window.screenLeft == "number") ? window.screenTop : window.screenY;
+    console.log("Left: " + leftPos);
+    console.log("Top: " + topPos);
+</script>
+</body>
+</html>

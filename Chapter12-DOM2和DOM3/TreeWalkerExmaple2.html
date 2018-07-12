@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TreeWalkerExmaple2</title>
+</head>
+<body>
+<div class="myDiv">
+    <p><b>Hello</b> world!</p>
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+        <li>list item3</li>
+    </ul>
+</div>
+<script>
+    var div = document.querySelector(".myDiv");
+    var walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, null, false);
+    console.log(walker);
+    console.log(walker.firstChild());
+    console.log(walker.currentNode);
+    console.log(walker.nextSibling());
+    console.log(walker.currentNode);
+    var node = walker.firstChild();
+
+    while (node !== null) {
+        console.log(node);
+        console.log(walker.currentNode);
+        node = walker.nextNode();
+    }
+</script>
+</body>
+</html>

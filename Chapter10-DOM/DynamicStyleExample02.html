@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DynamicStyleExample02</title>
+</head>
+<body>
+<script>
+    function loadStyleString(css) {
+        var style = document.createElement("style");
+        style.type = "text/css";
+        try {
+            style.appendChild(document.createTextNode(css));
+        }catch (ex){
+            style.stylesheet.cssText = css;
+        }
+        var head = document.getElementsByTagName("head")[0];
+        head.appendChild(style);
+    }
+    loadStyleString("body{background-color:red}");
+</script>
+</body>
+</html>

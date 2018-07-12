@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoadEventExample07</title>
+</head>
+<body>
+<script src="EventUtil.js"></script>
+<script>
+    EventUtil.addHandler(window, "load", function () {
+        var script = document.createElement("script");
+        EventUtil.addHandler(script, "load", function () {
+            console.log("Loaded");
+        });
+        script.src = "example.js";
+        document.body.appendChild(script);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>hello world</div>
+</body>
+<script>
+    var divs = document.getElementsByTagName("div"),
+        i,
+        len,
+        div;
+    for (i = 0, len = divs.length; i < len; i++) {
+        text = document.createTextNode("hello world!");
+        div = document.createElement("div");
+        div.appendChild(text);
+        document.body.appendChild(div);
+    }
+</script>
+</html>

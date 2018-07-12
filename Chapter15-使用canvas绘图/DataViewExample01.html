@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DataViewExample01</title>
+</head>
+<body>
+<script>
+    var buffer = new ArrayBuffer(20),
+        view = new DataView(buffer),
+        value;
+
+    view.setInt8(0, 25);
+    view.setInt16(2, 25);
+    value = view.getUint16(2);
+</script>
+</body>
+</html>

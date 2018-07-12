@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DClearRectExample01</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">sorry</canvas>
+<script>
+    var drawing = document.querySelector("#drawing");
+    if (drawing.getContext) {
+        var context = drawing.getContext("2d");
+
+        context.fillStyle = "#ff0000";
+        context.fillRect(10, 10, 50, 50);
+
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(30, 30, 50, 50);
+
+        context.clearRect(30, 30, 30, 30);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MathObjectRandomExample02</title>
+    <style>
+        .randomColor {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="randomColor">
+
+</div>
+<script>
+    /**
+     *
+     * @param {number} lowerValue 小值
+     * @param {number} upperValue 大值
+     * @returns {number} 范围 lowerValue-upperValue 之间的值
+     */
+    function selectFrom(lowerValue, upperValue) {
+        var choices = upperValue - lowerValue + 1;
+        return Math.floor(Math.random() * choices + lowerValue);
+    }
+    var num = selectFrom(2, 10);
+    var colors = ["red", "green", "blue", "yellow", "black", "purple", "brown"],
+        randomDiv = document.getElementsByClassName("randomColor")[0],
+        color = colors[selectFrom(0, colors.length)];
+    setInterval(function () {
+        color = colors[selectFrom(0, colors.length)];
+        randomDiv.style.backgroundColor = "rgba(" + selectFrom(0, 255) + "," + selectFrom(0, 255) + "," + selectFrom(0, 255) + "," + Math.random() + ")";
+    }, 1000)
+    console.log(num);
+</script>
+</body>
+</html>

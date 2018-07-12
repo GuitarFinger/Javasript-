@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SessionStorageExample01</title>
+</head>
+<body>
+<p>Name: <span id="name-value">(none)</span><br />
+Book: <span id="book-value">(none)</span></p>
+<input type="button" value="Delete Data" id="delete-btn">
+<input type="button" value="See All" id="see-btn">
+<script src="../EventUtil.js"></script>
+<script>
+    EventUtil.addHandler(window, "load", function () {
+        document.querySelector("#name-value").innerHTML = sessionStorage.getItem("name");
+        document.querySelector("#book-value").innerHTML = sessionStorage.getItem("book");
+
+        EventUtil.addHandler(document.querySelector("#delete-btn"),"click", function () {
+           sessionStorage.removeItem("name");
+           sessionStorage.removeItem("book");
+        });
+        EventUtil.addHandler(document.querySelector("#see-btn"), "click", function () {
+            var i, key, len, value;
+            for (i = 0, len = sessionStorage.length; i < len; i++) {
+                key = sessionStorage.key(i);
+                value = sessionStorage.getItem(key);
+                console.log(key + "=" + value);
+            }
+        });
+
+        sessionStorage.setItem("name", "HZC");
+        sessionStorage.setItem("book", "Professsional JavaScript");
+    });
+</script>
+</body>
+</html>

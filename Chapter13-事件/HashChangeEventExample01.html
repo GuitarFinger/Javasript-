@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HashChangeEventExample01</title>
+</head>
+<body>
+<a href="http://www.baidu.com">baidu</a>
+<script src="../EventUtil.js"></script>
+<script>
+    EventUtil.addHandler(window, "hashchange", function (event) {
+        alert("Old URL: " + event.oldURL + "\nNew URL: " + event.newURL);
+    });
+</script>
+</body>
+</html>

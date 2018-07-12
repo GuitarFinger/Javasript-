@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TimeouExample01</title>
+</head>
+<body>
+<script>
+    var timeOutId = setTimeout(function () {
+        console.log("Hello world");
+    }, 1000);
+    var num = 0,
+        max = 10,
+        intervalId = null;
+    function incrementNumber() {
+        num++;
+        if (num == max) {
+            clearInterval(intervalId);
+            console.log("Done");
+        }
+    }
+    intervalId = setInterval(incrementNumber, 500);
+    console.log(intervalId);
+    console.log(timeOutId);
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DragAndDropExample02</title>
+</head>
+<body>
+<div id="myDiv1" class="draggable" style="width: 100px; height: 100px;position: absolute; background: red;"></div>
+<div id="myDiv2" class="draggable" style="width: 100px; height: 100px;position: absolute; background: black;"></div>
+<script src="../EventUtil.js"></script>
+<script>
+    var DragDrop = function () {
+        var dragging = null;
+        function handleEvent(event) {
+            // get event and target
+            event = EventUtil.getEvent(event);
+            var target = EventUtil.getTarget(event);
+
+            switch (event.type) {
+                case "mousedown":
+                    if (target.className.indexOf("draggable") > -1) {
+                        dragging = target;
+                    }
+                    break;
+                case "mousemove":
+                    if (dragging !== null) {
+                        dragging.style.left = event.clientX + "px";
+                        dragging.style.top  = event.clientY + "px";
+                    }
+                    break;
+                case "mouseup":
+                    dragging = null;
+                    break;
+            }
+        }
+
+        return {
+            enable: function () {
+                EventUtil.addHandler(document, "mousedown", handleEvent);
+                EventUtil.addHandler(document, "mousemove", handleEvent);
+                EventUtil.addHandler(document, "mouseup", handleEvent);
+            },
+            disable: function () {
+                EventUtil.removeHandler(document, "mousedown", handleEvent);
+                EventUtil.removeHandler(document, "mousemove", handleEvent);
+                EventUtil.removeHandler(document, "mouseup", handleEvent);
+            }
+        }
+    }();
+
+    DragDrop.enable();
+</script>
+</body>
+</html>

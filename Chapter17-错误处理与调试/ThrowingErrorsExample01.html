@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThrowingErrorsExample01</title>
+</head>
+<body>
+<script>
+    function CustomError(message) {
+        this.name = "CustomError";
+        this.message = message;
+    }
+
+    CustomError.prototype = new Error();
+    function process(values) {
+        if (!(values instanceof Array)) {
+            throw new CustomError("process():Argument must be an array");
+        }
+
+        values.sort();
+
+        for (var i = 0, len = values.length; i < len; i++) {
+            if (values[i] > 100) {
+                return values[i];
+            }
+        }
+
+        return -1;
+    }
+
+    process("a");
+</script>
+</body>
+</html>

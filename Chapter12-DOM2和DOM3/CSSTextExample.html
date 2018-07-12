@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSSTextExample</title>
+    <!--<style>-->
+        <!--#myDiv {-->
+            <!--font-size: 16px;-->
+        <!--}-->
+    <!--</style>-->
+</head>
+<body>
+<div id="myDiv" style="height: 100px; width:100px; background-color: black;"></div>
+<script>
+    var myDiv = document.querySelector("#myDiv");
+//    console.log(myDiv.style.cssText);
+//    console.log(myDiv.style.length);
+//    console.log(myDiv.style.parentRule);
+//    console.log(myDiv.style.getPropertyCSSValue("height"));
+//    console.log(myDiv.style.item(1));
+//    myDiv.style.removeProperty("width");
+//    myDiv.style.setProperty("font-size","16px","");
+//    myDiv.style.cssText = "width:16px;"
+//    console.log(myDiv.style)
+    let prop, value, i, len;
+    for (i = 0, len = myDiv.style.length; i < len; i++) {
+        prop = myDiv.style[i];
+        value = myDiv.style.getPropertyValue(prop);
+        console.log(prop + " : " + value);
+        console.log(prop + " : " + value.cssText + " (" + value.cssValueType + ")");
+    }
+</script>
+</body>
+</html>

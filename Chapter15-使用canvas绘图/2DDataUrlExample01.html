@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DDataUrlExample01</title>
+</head>
+<body>
+<canvas id="drawing" width="200" height="200">A drawing of something.</canvas>
+<button id="export-btn">点我</button>
+<script>
+    var drawing = document.querySelector("#drawing"),
+        exportBtn = document.querySelector("#export-btn");
+    if (drawing.getContext) {
+        var context = drawing.getContext("2d");
+
+        // 画一个矩形
+        context.fillStyle = "#ff0000";
+        context.fillRect(20, 20, 50, 50);
+
+        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+        context.fillRect(40, 40, 50, 50);
+    }
+    exportBtn.onclick = function () {
+        var imgURL = drawing.toDataURL();
+
+        var image = document.createElement("img");
+        image.src = imgURL;
+        document.body.appendChild(image);
+    };
+
+</script>
+</body>
+</html>

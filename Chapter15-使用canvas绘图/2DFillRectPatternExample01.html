@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DFillRectPatternExample01</title>
+</head>
+<body>
+<img src="smile.gif" alt="">
+<canvas id="drawing" width="500" height="500"></canvas>
+<script>
+    var image = document.images[0],
+        context = drawing.getContext('2d'),
+        pattern = context.createPattern(image, "repeat");
+
+    // 绘制矩形
+    context.fillStyle = pattern;
+    context.fillRect(10, 10, 150, 150);
+    var imageData = context.getImageData(10, 5, 50, 50);
+    var data = imageData.data;
+</script>
+</body>
+</html>

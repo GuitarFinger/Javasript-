@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ObjectKeysExample01</title>
+</head>
+<body>
+<script>
+    // Object.keys() 接收一个对象作为参数，返回一个包含可枚举属性的字符串数组
+
+    function Person() {
+
+    }
+    Person.prototype.name = "Nicholas";
+    Person.prototype.age = 29;
+    Person.prototype.job = "Software Engineer";
+    Person.prototype.sayName = function () {
+        console.log(this.name);
+    };
+
+    var keys = Object.keys(Person.prototype);
+    console.log(keys);
+
+    var p1 = new Person();
+    p1.name = "Jack";
+    p1.age = 31;
+    var p1Keys = Object.keys(p1);
+    console.log(p1Keys);
+    var keys1 = Object.getOwnPropertyNames(Person.prototype);
+    console.log(keys1);
+</script>
+</body>
+</html>

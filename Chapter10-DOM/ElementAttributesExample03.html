@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ElementAttributesExample03</title>
+</head>
+<body>
+<div id="myDiv" class="bd" title="Body text" lang="en" dir="ltr" my_special_attribute="hello!">Hello world!</div>
+<input type="button" value="Get Div Attributes" onclick="getDivAtts()">
+<script>
+    function outputAttributes(element) {
+        var pairs = new Array(),
+            attrName,
+            attrValue,
+            i,
+            len;
+        for (i = 0, len = element.attributes.length; i < len; i++) {
+            attrName = element.attributes[i].nodeName;
+            attrValue = element.attributes[i].nodeValue;
+            if (element.attributes[i].specified) {
+                pairs.push(attrName + "=\"" + attrValue + "\"" );
+            }
+        }
+        return pairs;
+    }
+    function getDivAtts() {
+        console.log("hello world");
+    }
+    var element = document.getElementById("myDiv");
+    var result = outputAttributes(element);
+    console.log(result);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONStringifyExample01</title>
+</head>
+<body>
+<script>
+    var book = {
+        title: "Profession JavaScript",
+        authors: [
+            "Nicholas C. Zakas"
+        ],
+        edition: "",
+        year: 2011
+    };
+
+    var jsonText = JSON.stringify(book);
+    var bookCopy = JSON.parse(jsonText);
+    bookCopy.title = "what";
+    console.log(bookCopy);
+    console.log(book);
+    console.log(jsonText);
+</script>
+</body>
+</html>

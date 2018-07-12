@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PopupBlockerEaxmple01</title>
+</head>
+<body>
+<script>
+    var blocked = false;
+    try {
+        var wroxWxin = window.open("http://www.wrox.com", "_blank");
+        if (wroxWxin == null) {
+            blocked = true;
+        }
+    } catch (ex) {
+        blocked = true;
+    }
+    if (blocked) {
+        console.log("The popup was blocked!");
+    }
+</script>
+</body>
+</html>

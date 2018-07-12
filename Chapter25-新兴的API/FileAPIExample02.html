@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FileAPIExample02</title>
+    <script src="../EventUtil.js"></script>
+</head>
+<body>
+<input type="file" multiple id="files-list">
+<div id="progress"></div>
+<div id="output"></div>
+<script>
+    window.onload = function () {
+        var filesList = document.querySelector("#files-list");
+        EventUtil.addHandler(filesList, "change", function (event) {
+           var info = "",
+               output = document.querySelector("#output"),
+               progress = document.querySelector("#progress"),
+               files = EventUtil.getTarget(event).files,
+               type = "default",
+               reader = new FileReader();
+
+           if (/image/.test(files[0].type)) {
+               reader.readAsDataURL(files[0]);
+               type = "image";
+            } else {
+               reader.readAsText(files[0]);
+               type = "text";
+           }
+
+           reader.onerror = function () {
+               output.innerHTML = "Could not read file, error code is " + reader.error.code;
+           };
+
+           reader.onprogress = function (event) {
+               if (event.lengthComputable) {
+                   progress.innerHTML = event.loaded + "/" + event.total;
+               }
+           };
+
+           reader.onload = function () {
+               var fragment = document.createDocumentFragment();
+               switch (type) {
+                   case "image":
+                       fragment = "<img src=\"" + reader.result + "\">";
+                       break;
+                   case "text":
+                       fragment = reader.result;
+                       break;
+               }
+               output.innerHTML = fragment;
+           };
+        });
+    }
+</script>
+</body>
+</html>

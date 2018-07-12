@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventDelegationExample01</title>
+</head>
+<body>
+<ul id="myList">
+    <li id="goSomewhere">Go somewhere</li>
+    <li id="doSomething">Do something</li>
+    <li id="sayHi">Say hi</li>
+</ul>
+<script src="../EventUtil.js"></script>
+<script>
+    var list = document.querySelector("#myList");
+    EventUtil.addHandler(list, "click", function (event) {
+        event = EventUtil.getEvent(event);
+        var target =  EventUtil.getTarget(event);
+
+        switch (target.id) {
+            case "goSomewhere":
+                document.title = "I changed the document's title";
+                break;
+            case "doSomething":
+                location.href = "http://www.baidu.com";
+                break;
+            case "sayHi":
+                alert("hi");
+                break;
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ClosureExample01</title>
+</head>
+<body>
+<script>
+    function createFunctions() {
+        var result = new Array();
+        for (var i = 0; i < 10; i++) {
+            result[i] = function () {
+                return i;
+            };
+        }
+        return result;
+    }
+    console.log(createFunctions()[3]())
+</script>
+</body>
+</html>

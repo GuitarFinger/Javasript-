@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMEventObjectExample01</title>
+</head>
+<body>
+<button id="myBtn">click me</button>
+<script>
+    var btn = document.querySelector("#myBtn");
+    btn.onclick = function (event) {
+        console.log(event.currentTarget === this);
+        console.log(event.target === this);
+    }
+</script>
+</body>
+</html>

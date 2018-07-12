@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2DFillRectShadowExample01</title>
+</head>
+<body>
+<canvas id="drawing" width="500" height="500"></canvas>
+<script>
+    var drawing = document.querySelector("#drawing");
+    var context = drawing.getContext("2d");
+    context.shadowOffsetX = 5;
+    context.shadowOffSetY = 5;
+    context.shadowBlur = 4;
+    context.shadowColor = "rgba(0, 0, 0, 0.5)";
+
+    // 绘制红色矩形
+    context.fillStyle = "red";
+    context.fillRect(10, 10, 50, 50);
+
+    // 绘制蓝色矩形
+    context.fillStyle = "rgba(0, 0, 0,.6)";
+    context.fillRect(70, 70, 50, 50);
+
+</script>
+</body>
+</html>

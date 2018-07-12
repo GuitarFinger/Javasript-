@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TextNodeExample05</title>
+</head>
+<body>
+<script>
+    var element = document.createElement("div");
+    element.className = "message";
+
+    var textNode = document.createTextNode("Hello world!");
+    element.appendChild(textNode);
+
+    var anotherNode = document.createTextNode(" what");
+    element.appendChild(anotherNode);
+
+    document.body.appendChild(element);
+    console.log(element.firstChild.nodeValue);
+    console.log(element.childNodes.length);
+    element.normalize();
+    console.log(element.childNodes.length);
+    console.log(element.firstChild.nodeValue);
+</script>
+</body>
+</html>

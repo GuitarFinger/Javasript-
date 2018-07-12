@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOMEventObjectExample05</title>
+</head>
+<body>
+<button id="myBtn">click me!</button>
+<script>
+    var btn = document.querySelector("#myBtn");
+    btn.onclick = function (event) {
+        console.log("Btn Clicked", event.target);
+        event.stopPropagation();
+    };
+    document.body.onclick = function (event) {
+        console.log("Body Click", event.target);
+    };
+</script>
+</body>
+</html>

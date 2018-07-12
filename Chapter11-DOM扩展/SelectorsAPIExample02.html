@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SelectorsAPIExample02</title>
+</head>
+<body>
+<div id="myDiv">
+    <em>hello</em>
+    <em>world</em>
+</div>
+<p class="selected">hei <strong>二货</strong></p>
+<p class="selected">hi <storng>饿了吧</storng></p>
+<p class="selected">ha <strong>来条士力架吧</strong></p>
+<script>
+    var ems = document.querySelector("#myDiv").querySelectorAll("em");
+    var selecteds = document.querySelectorAll(".selected");
+    var strongs = document.querySelectorAll("p strong");
+    console.log(ems);
+    console.log(selecteds);
+    console.log(strongs);
+    var i, len, strong;
+    for (i = 0, len = strongs.length; i < len; i++) {
+        strong = strongs[i];
+        strong.className = "important";
+        console.log(strongs[i]);
+        console.log(strongs.item(i));
+    }
+</script>
+</body>
+</html>

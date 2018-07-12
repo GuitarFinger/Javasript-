@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RegExpInstanceProperitesExample01+</title>
+</head>
+<body>
+<script>
+    var patter1 = /\[bc\]at/i;
+    console.log("global: " + patter1.global);
+    console.log("ignoreCase: " + patter1.ignoreCase);
+    console.log("multiline: " + patter1.multiline);
+    console.log("lastIndex: " + patter1.lastIndex);
+    console.log("source: " + patter1.source);
+    console.log("=============================");
+
+    var patter2 = new RegExp("\\[bc\\]at", "i");
+    console.log("global: " + patter2.global);
+    console.log("ignoreCase: " + patter2.ignoreCase);
+    console.log("multiline: " + patter2.multiline);
+    console.log("lastIndex: " + patter2.lastIndex);
+    console.log("source: " + patter2.source);
+</script>
+</body>
+</html>

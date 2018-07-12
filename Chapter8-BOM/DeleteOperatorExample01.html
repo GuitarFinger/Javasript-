@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DeleteOperatorExample01</title>
+</head>
+<body>
+<script>
+    var age = 29;
+    window.color = "red";
+    // 在IE<9时抛出错误，在其他所有浏览器中都返回false
+    delete  window.age;
+    delete window.color;
+    console.log(window.age);
+    console.log(window.color);
+</script>
+</body>
+</html>

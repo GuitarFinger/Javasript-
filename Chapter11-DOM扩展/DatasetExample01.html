@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DatasetExample01</title>
+</head>
+<body>
+<div id="myDiv" data-appid="12345" data-name="what"></div>
+<script>
+    var myDiv = document.querySelector("#myDiv");
+    var appId = myDiv.dataset.appid;
+    var myName = myDiv.dataset.name;
+    console.log(appId);
+    console.log(myName);
+    myDiv.dataset.appId = "9876";
+    myDiv.dataset.name = "fuck";
+    if (myDiv.dataset.name) {
+        console.log("hello, " + myDiv.dataset.name);
+    }
+</script>
+</body>
+</html>

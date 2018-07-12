@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HybridFactoryPatternExample02</title>
+</head>
+<body>
+<script>
+    function SpeicalArray() {
+
+        var values = new Array();
+
+        values.push.apply(values, arguments);
+
+        values.toPipedString = function () {
+            return this.join("|");
+        };
+
+        return values;
+    }
+    var colors = new SpeicalArray("red", "blue", "green");
+    console.log(colors.toPipedString());
+</script>
+</body>
+</html>
